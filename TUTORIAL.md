@@ -6,7 +6,8 @@
 - [vcpkg](<https://github.com/Microsoft/vcpkg>)
 - [soggy](<https://github.com/LDAsuku/soggy>)
 - [soggy_resources](<https://codeberg.org/LDA_suku/soggy_resources>)
-- [Python 3](<https://www.python.org/downloads/>)>
+- [Python 3](<https://www.python.org/downloads/>)
+- [Fiddler Classic](<https://www.telerik.com/download/fiddler>)
 - CB1 Client
 
 *Add-Ons : Desktop development with C++
