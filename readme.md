@@ -1,10 +1,8 @@
-If you're going to chase clout on twitter by posting "leaks" with this, PLEASE credit the project.
-
 # Soggy
 
-Server software implementation for a game I forgot its name 💀
+Experimental server emulator for a game I forgot its name 💀
 
-![soggy cat](soggy_cat.png "soggy cat")
+![soggy cat](static/soggy_cat.png "soggy cat")
 
 [Setup & Documentation](https://nitter.pussthecat.org/sillysoggycat/)
 
@@ -49,17 +47,26 @@ cmake --build build -j8
 
 ## Running
 
-Put the `resources` directory in the current working directory and run. Enter `help` in the interactive prompt to see a list of commands.
+Put the `resources` directory and `soggy.cfg` in the current working directory and run soggy. Enter `help` in the interactive prompt to see a list of commands.
+
+`dispatch.py` is obsolete. The game server has a built-in dispatch server now.
+
+Resources can be found on the repo wiki.
 
 ## Client patches
 
 ```
-# linux patch (I have no idea what this even does, but it works)
-(VA=0x1820828f2, fileoffset=0x2081cf2) = 90 90 90 90 90
+=== GS.exe
+# disable AC
+(VA=0x140ef5080, fileoffset=0xef4480) = c3
+
+=== GS_Data/Native/UserAssembly.dll
 # sprint nocd
 (VA=0x1802d1ef0, fileoffset=0x2d12f0) = b0 01 c3
 # skill nocd
 (VA=0x181ac998c, fileoffset=0x1ac8d8c) = 66 0f ef ff
 # skip update checks for slightly faster load time
 (VA=0x18213221b, fileoffset=0x213161b) = 90 90 90 90 90 90
+# kill paimon
+(VA=0x182083430, fileoffset=0x2082830) = c3
 ```
